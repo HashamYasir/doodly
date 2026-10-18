@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOODLY — little games, big distractions</title>
+  <meta name="description" content="Little games, big distractions. Click a game and play.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- Wobbly hand-drawn edges: assets/home.js re-rolls the seed a few times a second ("line boil") -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="wob" x="-6%" y="-6%" width="112%" height="112%">
+      <feTurbulence id="wobN" type="fractalNoise" baseFrequency="0.021" numOctaves="2" seed="2" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <!-- PIXEL SKY: just decoration. Each sprite is an SVG in assets/pixels/ (edit, swap or add your own).
+       --x / --y = position in %, --w = width, --d = float speed. -->
+  <div class="sky" aria-hidden="true">
+    <img class="px cloud c1" src="assets/pixels/cloud.svg" alt="">
+    <img class="px cloud c2" src="assets/pixels/cloud.svg" alt="">
+    <img class="px cloud c3" src="assets/pixels/cloud.svg" alt="">
+
+    <img class="px float" src="assets/pixels/star.svg"     alt="" style="--x:8%;  --y:15%; --w:44px; --d:5s">
+    <img class="px float" src="assets/pixels/heart.svg"    alt="" style="--x:91%; --y:20%; --w:44px; --d:6s">
+    <img class="px float" src="assets/pixels/cherry.svg"   alt="" style="--x:78%; --y:9%;  --w:48px; --d:7s">
+    <img class="px float" src="assets/pixels/coin.svg"     alt="" style="--x:4%;  --y:36%; --w:40px; --d:4s">
+    <img class="px float sm-hide" src="assets/pixels/spoon.svg"    alt="" style="--x:13%; --y:55%; --w:48px; --d:6.5s">
+    <img class="px float sm-hide" src="assets/pixels/ghost.svg"    alt="" style="--x:86%; --y:42%; --w:48px; --d:8s">
+    <img class="px float sm-hide" src="assets/pixels/gamepad.svg"  alt="" style="--x:5%;  --y:72%; --w:64px; --d:5.5s">
+    <img class="px float sm-hide" src="assets/pixels/smiley.svg"   alt="" style="--x:93%; --y:68%; --w:40px; --d:4.5s">
+    <img class="px twinkle" src="assets/pixels/sparkle.svg" alt="" style="--x:22%; --y:9%;  --w:36px; --d:2.4s">
+    <img class="px twinkle" src="assets/pixels/sparkle.svg" alt="" style="--x:68%; --y:30%; --w:27px; --d:3.1s">
+    <img class="px twinkle sm-hide" src="assets/pixels/sparkle.svg" alt="" style="--x:30%; --y:68%; --w:27px; --d:2.8s">
+    <img class="px twinkle" src="assets/pixels/sparkle.svg" alt="" style="--x:96%; --y:46%; --w:36px; --d:3.6s">
+  </div>
+
+  <header>
+    <h1 class="logo">
+      <span class="sr-only">DOODLY</span>
+      <span class="ltr" aria-hidden="true" style="--c:#ff5a4d; --i:0">D</span><span class="ltr" aria-hidden="true" style="--c:#ffc83d; --i:1">O</span><span class="ltr" aria-hidden="true" style="--c:#5fb4ff; --i:2">O</span><span class="ltr" aria-hidden="true" style="--c:#5fe0b0; --i:3">D</span><span class="ltr" aria-hidden="true" style="--c:#ffa6d5; --i:4">L</span><span class="ltr" aria-hidden="true" style="--c:#bba0ff; --i:5">Y</span>
+      <img class="px bob" src="assets/pixels/smiley.svg" alt="" style="--w:60px">
+    </h1>
+    <p class="tag">little games, big distractions</p>
+    <p class="nudge" aria-hidden="true">pick one!
+      <svg viewBox="0 0 60 50" width="60" height="50"><path d="M8 4 C 4 22, 22 22, 28 34 S 40 40, 44 42" fill="none" stroke="#1b1a17" stroke-width="4" stroke-linecap="round"/><path d="M32 44 L45 43 L40 31" fill="none" stroke="#1b1a17" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </p>
+  </header>
+
+  <main class="grid">
+
+    <!-- ONE GAME = ONE CARD. To add a game, copy a whole <a class="card">…</a> block.
+         The game's folder (games/<name>/) holds index.html (the game) and cover.svg (its banner). -->
+    <a class="card" href="games/spoon-scale/index.html" aria-label="Play How Much Is Too Much?">
+      <span class="art"><img src="games/spoon-scale/cover.svg" alt="How Much Is Too Much?" width="864" height="320"></span>
+      <span class="sticker" aria-hidden="true">NEW!</span>
+    </a>
+
+    <!-- Teasers: delete these two when you have more games. -->
+    <div class="card soon" aria-label="Next game, coming soon">
+      <span class="art"><img class="px qb" src="assets/pixels/qblock.svg" alt=""><b>next doodle loading…</b></span>
+    </div>
+    <div class="card soon" aria-label="Another game, coming soon">
+      <span class="art"><img class="px qb" src="assets/pixels/qblock.svg" alt="" style="animation-delay:-.6s"><b>???</b></span>
+    </div>
+
+  </main>
+
+  <!-- PIXEL GROUND with a wandering cat -->
+  <div class="ground" aria-hidden="true">
+    <img class="px pal pal1" src="assets/pixels/mushroom.svg" alt="" style="--w:48px; left:12%">
+    <img class="px pal pal2" src="assets/pixels/cherry.svg"   alt="" style="--w:48px; left:46%">
+    <img class="px pal pal3" src="assets/pixels/pip.svg"      alt="" style="--w:40px; left:78%">
+    <div class="walker"><img class="px hop" src="assets/pixels/cat.svg" alt="" style="--w:48px"></div>
+  </div>
+
+  <script src="assets/home.js"></script>
+</body>
+</html>

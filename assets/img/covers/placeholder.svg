@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Cover art coming soon">
+<rect width="640" height="400" fill="#f2ecdd"/>
+<rect x="24" y="24" width="592" height="352" rx="18" fill="none" stroke="#1b1a17" stroke-opacity=".5" stroke-width="4" stroke-dasharray="14 12"/>
+<g transform="translate(320 185) scale(.9)">
+<path d="M-88 8c-6-58 38-96 92-92 56 4 90 44 84 98-6 54-48 86-100 82-50-4-70-40-76-88z" fill="#fff" stroke="#1b1a17" stroke-width="7" stroke-linejoin="round"/>
+<path d="M-40 -16l22 14M-40 -2l22-14M26 -16l22 14M26 -2l22-14" stroke="#1b1a17" stroke-width="7" stroke-linecap="round"/>
+<path d="M-24 40q30-24 64 0" fill="none" stroke="#1b1a17" stroke-width="7" stroke-linecap="round"/></g>
+<text x="320" y="338" text-anchor="middle" font-family="ui-rounded, system-ui, sans-serif" font-size="26" font-weight="800" fill="#1b1a17" fill-opacity=".7">cover coming soon</text>
+</svg>
